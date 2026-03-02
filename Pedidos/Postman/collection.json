@@ -1,0 +1,41 @@
+{
+  "info": {
+    "name": "Pedidos API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Acme S.A.\",\n  \"items\": [ { \"productId\": 1, \"quantity\": 1 } ]\n}"
+        },
+        "url": "{{baseUrl}}/api/orders"
+      }
+    },
+    {
+      "name": "Get Order",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/orders/1"
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "https://localhost:5001" }
+  ]
+}
