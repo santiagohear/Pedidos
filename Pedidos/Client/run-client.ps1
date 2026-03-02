@@ -1,5 +1,5 @@
 param(
-    [string]$BaseUrl = "https://localhost:5001"
+    [string]$BaseUrl = "https://localhost:7264"
 )
 
 Write-Host "Ejecutando cliente de la API: $BaseUrl"

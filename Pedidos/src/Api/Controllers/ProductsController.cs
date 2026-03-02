@@ -40,9 +40,16 @@ public class ProductsController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        _db.Products.Add(input);
+        var product = new Product
+        {
+            Name = input.Name,
+            Price = input.Price,
+            Stock = input.Stock
+        };
+
+        _db.Products.Add(product);
         await _db.SaveChangesAsync();
-        return CreatedAtAction(nameof(Get), new { id = input.Id }, input);
+        return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
     }
 
     [HttpPut("{id:int}")]

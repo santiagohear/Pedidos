@@ -9,7 +9,7 @@ public class Program
     {
         Console.WriteLine("Cliente iniciando...");
 
-        var baseUrl = Environment.GetEnvironmentVariable("API_BASE_URL") ?? "https://localhost:5001";
+        var baseUrl = Environment.GetEnvironmentVariable("API_BASE_URL") ?? "https://localhost:7264";
         using var http = new HttpClient { BaseAddress = new Uri(baseUrl) };
 
         Console.WriteLine("GET /api/products");
